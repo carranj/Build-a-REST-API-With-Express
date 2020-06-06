@@ -9,7 +9,6 @@ router.get("/", function(req, res){
    res.json({response: "You sent me a GET request"}); 
 });
 
-
 //POST /questions
 //Route for creating questions
 router.post("/", function(req, res){
@@ -21,10 +20,54 @@ router.post("/", function(req, res){
 
  //GET /:id
 //Route for specific questions
-router.get("/:id", function(req, res){
+router.get("/:qID", function(req, res){
     res.json({
-        response: `You sent me a GET request for ${req.params.id}`
+        response: `You sent me a GET request for ${req.params.qID}`
     }); 
  });
+
+ //POST /questions/:id/answers
+//Route for creating answer
+router.post("/:qID/answers", function(req, res){
+    res.json({
+        response: "You sent me a POST request to /answers",
+        questionId: req.params.qID,
+        body: req.body
+    }); 
+ });
+
+ //PUT /questions/:qID/answers/:aID
+//Edit a  specific answer
+router.put("/:qID/answers/:aID", function(req, res){
+    res.json({
+        response: "You sent me a POST request to /answers",
+        questionId: req.params.qID,
+        answerId: req.params.aID,
+        body: req.body
+    }); 
+ });
+
+//DELETE /questions/:qID/answers/:aID
+//Delete a  specific answer
+router.delete("/:qID/answers/:aID", function(req, res){
+    res.json({
+        response: "You sent me a DELETE request to /answers",
+        questionId: req.params.qID,
+        answerId: req.params.aID,
+    }); 
+ });
+
+ //POST /questions/:qID/answers/:aID/vote-up
+  //POST /questions/:qID/answers/:aID/vote-down
+//Vote on a specific answer
+router.post("/:qID/answers/:aID/vote-:dir", function(req, res){
+    res.json({
+        response: `You sent me a POST request to /vote-${req.params.dir}`,
+        questionId: req.params.qID,
+        answerId: req.params.aID,
+        vote: req.params.dir
+    }); 
+ });
+
 
 module.exports = router;

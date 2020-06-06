@@ -1,0 +1,23 @@
+{
+  "name": "build-a-rest-api-with-express",
+  "version": "1.0.0",
+  "description": "Build a rest api with express with Team Treehouse tutorials.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carranj/Build-a-REST-API-With-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carranj/Build-a-REST-API-With-Express/issues"
+  },
+  "homepage": "https://github.com/carranj/Build-a-REST-API-With-Express#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
